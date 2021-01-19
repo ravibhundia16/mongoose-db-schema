@@ -3,7 +3,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const restaurantsDetailsSchema = new Schema({
+const restaurantDetailsSchema = new Schema({
   id: {
     type: Number,
     required: true
@@ -26,7 +26,7 @@ const restaurantsDetailsSchema = new Schema({
   miles: {
     type: String
   },
-  is_resturant_verified: {
+  is_restaurant_verified: {
     type: Number,
     required: true
   },
@@ -55,7 +55,7 @@ const restaurantsDetailsSchema = new Schema({
   mobile_number: {
     type: Number
   },
-  resturant_location: {
+  restaurant_location: {
     type: String
   },
   till_number: {
@@ -78,4 +78,4 @@ const restaurantsDetailsSchema = new Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('restaurants_details', restaurantsDetailsSchema)
+module.exports = mongoose.model('restaurant_details', restaurantDetailsSchema)

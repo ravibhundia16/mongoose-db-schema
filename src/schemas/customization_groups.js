@@ -28,7 +28,8 @@ const customizationGroupsSchema = new Schema({
   },
   product_id: {
     type: Number
-  }
+  },
+  _id: false
 }, {
   timestamps: true
 })

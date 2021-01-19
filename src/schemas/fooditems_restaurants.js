@@ -62,7 +62,8 @@ const foodItemsRestaurantsSchema = new Schema({
   },
   modified_on: {
     type: Date
-  }
+  },
+  _id: false
 }, {
   timestamps: true
 })

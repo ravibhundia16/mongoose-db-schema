@@ -37,7 +37,7 @@ const foodItemsSchema = new Schema({
   image_url: {
     type: String
   },
-  cusine: {
+  cusine_name: {
     type: String
   },
   is_deleted: {

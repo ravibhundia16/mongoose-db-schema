@@ -18,7 +18,7 @@ const cusinesSchema = new Schema({
   created_on: {
     type: Date
   },
-  cusine_imge: {
+  cusine_image: {
     type: String
   },
   _id: false
