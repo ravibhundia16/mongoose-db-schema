@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const customizationGroupsSchema = new Schema({
+const customizationGroupSchema = new Schema({
   pos_group_id: {
     type: Number
   },
@@ -28,10 +28,9 @@ const customizationGroupsSchema = new Schema({
   },
   product_id: {
     type: Number
-  },
-  _id: false
+  }
 }, {
   timestamps: true
 })
 
-module.exports = mongoose.model('customization_groups', customizationGroupsSchema)
+module.exports = mongoose.model('customization_groups', customizationGroupSchema)

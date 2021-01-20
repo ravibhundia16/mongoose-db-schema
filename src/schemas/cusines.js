@@ -1,9 +1,7 @@
-'use strict'
-
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const cusinesSchema = new Schema({
+const cusineSchema = new Schema({
   id: {
     type: Number,
     required: true
@@ -20,10 +18,9 @@ const cusinesSchema = new Schema({
   },
   cusine_image: {
     type: String
-  },
-  _id: false
+  }
 }, {
   timestamps: true
 })
 
-module.exports = mongoose.model('cusines', cusinesSchema)
+module.exports = mongoose.model('cusines', cusineSchema)

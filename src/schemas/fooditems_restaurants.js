@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const foodItemsRestaurantsSchema = new Schema({
+const foodItemsRestaurantSchema = new Schema({
   status: {
     type: Number
   },
@@ -62,10 +62,9 @@ const foodItemsRestaurantsSchema = new Schema({
   },
   modified_on: {
     type: Date
-  },
-  _id: false
+  }
 }, {
   timestamps: true
 })
 
-module.exports = mongoose.model('fooditems_restaurants', foodItemsRestaurantsSchema)
+module.exports = mongoose.model('fooditems_restaurants', foodItemsRestaurantSchema)

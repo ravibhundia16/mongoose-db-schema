@@ -1,9 +1,7 @@
-'use strict'
-
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const restaurantDetailsSchema = new Schema({
+const restaurantDetailSchema = new Schema({
   id: {
     type: Number,
     required: true
@@ -72,10 +70,9 @@ const restaurantDetailsSchema = new Schema({
   },
   resturant_image: {
     type: String
-  },
-  _id: false
+  }
 }, {
   timestamps: true
 })
 
-module.exports = mongoose.model('restaurant_details', restaurantDetailsSchema)
+module.exports = mongoose.model('restaurant_details', restaurantDetailSchema)
