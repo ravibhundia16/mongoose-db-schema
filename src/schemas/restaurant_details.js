@@ -70,9 +70,20 @@ const restaurantDetailSchema = new Schema({
   },
   resturant_image: {
     type: String
+  },
+  is_deleted: {
+    type: Boolean,
+    required: true,
+    default: false
   }
 }, {
   timestamps: true
+})
+
+restaurantDetailSchema.plugin(global.indexedDB.autoIncrement, {
+  model: 'restaurant_details',
+  field: 'id',
+  startedAt: 1
 })
 
 module.exports = mongoose.model('restaurant_details', restaurantDetailSchema)

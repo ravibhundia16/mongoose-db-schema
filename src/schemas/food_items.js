@@ -2,6 +2,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const foodItemSchema = new Schema({
+  id: {
+    type: Number,
+    required: true
+  },
   pos_manu_id: {
     type: Number
   },
@@ -39,7 +43,9 @@ const foodItemSchema = new Schema({
     type: String
   },
   is_deleted: {
-    type: Boolean
+    type: Boolean,
+    required: true,
+    default: false
   },
   status: {
     type: Number
@@ -49,6 +55,12 @@ const foodItemSchema = new Schema({
   }
 },{
   timestamps: true
+})
+
+restaurantDetailSchema.plugin(global.indexedDB.autoIncrement, {
+  model: 'food_items',
+  field: 'id',
+  startedAt: 1
 })
 
 module.exports = mongoose.model('food_items', foodItemSchema)
