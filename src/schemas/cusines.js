@@ -28,7 +28,7 @@ const cusineSchema = new Schema({
   timestamps: true
 })
 
-restaurantDetailSchema.plugin(global.indexedDB.autoIncrement, {
+cusineSchema.plugin(global.indexedDB.autoIncrement, {
   model: 'cusines',
   field: 'id',
   startedAt: 1

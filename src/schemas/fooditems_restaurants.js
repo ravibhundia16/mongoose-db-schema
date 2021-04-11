@@ -71,7 +71,7 @@ const foodItemsRestaurantSchema = new Schema({
   timestamps: true
 })
 
-restaurantDetailSchema.plugin(global.indexedDB.autoIncrement, {
+foodItemsRestaurantSchema.plugin(global.indexedDB.autoIncrement, {
   model: 'fooditems_restaurants',
   field: 'id',
   startedAt: 1

@@ -42,7 +42,7 @@ const customizationGroupSchema = new Schema({
   timestamps: true
 })
 
-restaurantDetailSchema.plugin(global.indexedDB.autoIncrement, {
+customizationGroupSchema.plugin(global.indexedDB.autoIncrement, {
   model: 'customization_groups',
   field: 'id',
   startedAt: 1
