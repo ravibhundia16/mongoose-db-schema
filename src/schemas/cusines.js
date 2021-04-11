@@ -28,7 +28,7 @@ const cusineSchema = new Schema({
   timestamps: true
 })
 
-cusineSchema.plugin(global.indexedDB.autoIncrement, {
+cusineSchema.plugin(global.db.autoIncrement, {
   model: 'cusines',
   field: 'id',
   startedAt: 1

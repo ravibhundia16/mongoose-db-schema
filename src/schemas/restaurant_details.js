@@ -80,7 +80,7 @@ const restaurantDetailSchema = new Schema({
   timestamps: true
 })
 
-restaurantDetailSchema.plugin(global.indexedDB.autoIncrement, {
+restaurantDetailSchema.plugin(global.db.autoIncrement, {
   model: 'restaurant_details',
   field: 'id',
   startedAt: 1

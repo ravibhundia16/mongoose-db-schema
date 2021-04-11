@@ -42,7 +42,7 @@ const customizationGroupSchema = new Schema({
   timestamps: true
 })
 
-customizationGroupSchema.plugin(global.indexedDB.autoIncrement, {
+customizationGroupSchema.plugin(global.db.autoIncrement, {
   model: 'customization_groups',
   field: 'id',
   startedAt: 1
