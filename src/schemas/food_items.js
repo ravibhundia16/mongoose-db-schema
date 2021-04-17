@@ -15,9 +15,6 @@ const foodItemSchema = new Schema({
   date: {
     type: Date
   },
-  created_on: {
-    type: Date
-  },
   name: {
     type: String
   },
@@ -54,13 +51,11 @@ const foodItemSchema = new Schema({
     type: Number
   }
 },{
-  timestamps: true
-})
-
-foodItemSchema.plugin(global.db.autoIncrement, {
-  model: 'food_items',
-  field: 'id',
-  startedAt: 1
+  timestamps: {
+    createdAt: 'created_on',
+    updatedAt: 'updated_on'
+  },
+  collection: 'food_items'
 })
 
 module.exports = mongoose.model('food_items', foodItemSchema)

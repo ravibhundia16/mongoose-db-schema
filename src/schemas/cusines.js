@@ -13,9 +13,6 @@ const cusineSchema = new Schema({
   status: {
     type: Number
   },
-  created_on: {
-    type: Date
-  },
   cusine_image: {
     type: String
   },
@@ -25,13 +22,11 @@ const cusineSchema = new Schema({
     default: false
   }
 }, {
-  timestamps: true
-})
-
-cusineSchema.plugin(global.db.autoIncrement, {
-  model: 'cusines',
-  field: 'id',
-  startedAt: 1
+  timestamps: {
+    createdAt: 'created_on',
+    updatedAt: 'updated_on'
+  },
+  collection: 'cusines'
 })
 
 module.exports = mongoose.model('cusines', cusineSchema)

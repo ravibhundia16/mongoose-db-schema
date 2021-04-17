@@ -27,9 +27,6 @@ const customizationGroupSchema = new Schema({
   status: {
     type: Number
   },
-  created_on: {
-    type: Date
-  },
   product_id: {
     type: Number
   },
@@ -39,13 +36,11 @@ const customizationGroupSchema = new Schema({
     default: false
   }
 }, {
-  timestamps: true
-})
-
-customizationGroupSchema.plugin(global.db.autoIncrement, {
-  model: 'customization_groups',
-  field: 'id',
-  startedAt: 1
+  timestamps: {
+    createdAt: 'created_on',
+    updatedAt: 'updated_on'
+  },
+  collection: 'customization_groups'
 })
 
 module.exports = mongoose.model('customization_groups', customizationGroupSchema)

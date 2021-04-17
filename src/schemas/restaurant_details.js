@@ -28,9 +28,6 @@ const restaurantDetailSchema = new Schema({
     type: Number,
     required: true
   },
-  created_on: {
-    type: Date
-  },
   pos_rest_id: {
     type: String
   },
@@ -77,13 +74,11 @@ const restaurantDetailSchema = new Schema({
     default: false
   }
 }, {
-  timestamps: true
-})
-
-restaurantDetailSchema.plugin(global.db.autoIncrement, {
-  model: 'restaurant_details',
-  field: 'id',
-  startedAt: 1
+  timestamps: {
+    createdAt: 'created_on',
+    updatedAt: 'updated_on'
+  },
+  collection: 'restaurant_details'
 })
 
 module.exports = mongoose.model('restaurant_details', restaurantDetailSchema)

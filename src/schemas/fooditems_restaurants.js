@@ -9,9 +9,6 @@ const foodItemsRestaurantSchema = new Schema({
   status: {
     type: Number
   },
-  created_on: {
-    type: Date
-  },
   is_deleted: {
     type: Boolean,
     required: true,
@@ -68,13 +65,11 @@ const foodItemsRestaurantSchema = new Schema({
     type: Date
   }
 }, {
-  timestamps: true
-})
-
-foodItemsRestaurantSchema.plugin(global.db.autoIncrement, {
-  model: 'fooditems_restaurants',
-  field: 'id',
-  startedAt: 1
+  timestamps: {
+    createdAt: 'created_on',
+    updatedAt: 'updated_on'
+  },
+  collection: 'fooditems_restaurants'
 })
 
 module.exports = mongoose.model('fooditems_restaurants', foodItemsRestaurantSchema)
