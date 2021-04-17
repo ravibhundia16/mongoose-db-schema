@@ -65,7 +65,7 @@ const restaurantDetailSchema = new Schema({
   close_time: {
     type: String
   },
-  resturant_image: {
+  restaurant_image: {
     type: String
   },
   is_deleted: {
