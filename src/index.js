@@ -3,5 +3,6 @@ module.exports = {
   customizationGroupsModel: require('./schemas/customization_groups'),
   foodItemsModel: require('./schemas/food_items'),
   foodItemsRestaurantsModel: require('./schemas/fooditems_restaurants'),
-  restaurantDetailsModel: require('./schemas/restaurant_details')
+  restaurantDetailsModel: require('./schemas/restaurant_details'),
+  usersModel: require('./schemas/users')
 }
